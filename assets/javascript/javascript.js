@@ -46,6 +46,13 @@ function buttonCreate () {
 	}
 }
 
+function createButton() {
+	
+}
+
+
+
+
 //calling the buttonCreate function in order to creaet buttons
 buttonCreate()
 
@@ -88,6 +95,9 @@ $(".button").on("click", function() {
 	})
 
 })
+
+
+
 
 $(document.body).on("click", ".images", function() {
 	var state = $(this).attr("data-state")
