@@ -26,6 +26,7 @@ var apiKey = "&api_key=dc6zaTOxFJmzC&limit=10";
 //Functin for looping through characterArray and creating initial set of buttons
 function buttonCreate () {
 	
+	$("#buttonDiv").empty();
 	//initiating loop
 	for (var i = 0; i < characterArray.length; i += 1) {
 		
@@ -44,13 +45,13 @@ function buttonCreate () {
 		//appending the button to the div class for the button container
 		buttonDiv.append(buttonClass);
 	}
+	$("#addChar").on("click", function() {
+		event.preventDefault();
+		var character = $("#charValue").val().trim();
+		characterArray.push(character)
+		buttonCreate();		
+	})
 }
-
-function createButton() {
-	
-}
-
-
 
 
 //calling the buttonCreate function in order to creaet buttons
@@ -58,7 +59,7 @@ buttonCreate()
 
 
 //creating on click event for the buttons to pull gifs
-$(".button").on("click", function() {
+$(document.body).on("click", ".button", function() {
 
 	//Logging the data name of the button clicked and saving it to a variable
 	var name = $(this).attr("data-name")
