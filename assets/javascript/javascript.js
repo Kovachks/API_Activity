@@ -26,7 +26,9 @@ var apiKey = "&api_key=dc6zaTOxFJmzC&limit=10";
 //Functin for looping through characterArray and creating initial set of buttons
 function buttonCreate () {
 	
+	//emptying the button DIV in order to rmeove the chance of duplicates
 	$("#buttonDiv").empty();
+
 	//initiating loop
 	for (var i = 0; i < characterArray.length; i += 1) {
 		
@@ -45,16 +47,26 @@ function buttonCreate () {
 		//appending the button to the div class for the button container
 		buttonDiv.append(buttonClass);
 	}
+
+	//creating on click function for the generation of new buttons
 	$("#addChar").on("click", function() {
+
+		//stops the default action of an element from happening
 		event.preventDefault();
+
+		//storing the name entered in as a variable
 		var character = $("#charValue").val().trim();
+
+		//pushing the character variable to the character array
 		characterArray.push(character)
+
+		//running the buttonCreate function to post all the old variables and the new variable as well
 		buttonCreate();		
 	})
 }
 
 
-//calling the buttonCreate function in order to creaet buttons
+//calling the buttonCreate function in order to create buttons on page load
 buttonCreate()
 
 
