@@ -76,21 +76,47 @@ $(document.body).on("click", ".button", function() {
 		//using the get method in order to pull information
 		method: "GET"
 	})
-	//
+
+	//Once response is finished start our function which will grab and post our gifs
 	.done(function(response) {
+
+		//saving the data from our response into a variable
 		var results = response.data;
-		console.log(response);
+
+		//beginning a loop which will post our gifs
 		for (var i = 0; i<results.length; i += 1) {
+
+			//Creating a div variable which we will use for each specific gif
 			var gifDiv = $("<div>")
+
+			//Creating a paragraph element which will store our gif's rating
 			var p = $("<p>").text("Rating: " + results[i].rating);
+
+			//Creating an image element which we will use for each gif's image
 			var characterImage = $("<img>");
+
+			//giving our image the source from our results variable associated with the correct GIF in the loop
 			characterImage.attr("src", results[i].images.fixed_height_still.url);
+
+			//giving our image the still attribute.  Used for switching between animated/still state
 			characterImage.attr("data-still", results[i].images.fixed_height_still.url)
+
+			//giving our image the animate attribute.  Used for switching between animated/still state
 			characterImage.attr("data-animate", results[i].images.fixed_height.url)
+
+			//Giving our image the images class.  Used for formatting and adding click events
 			characterImage.addClass("images")
+
+			//giving our image the state attribute.  Used for flipping between animated and stills states
 			characterImage.attr("data-state", "still")
+
+			//appending the paragraph element to the gif div
 			gifDiv.append(p);
+
+			//appending the image element to the gif div
 			gifDiv.append(characterImage);
+
+			//prepending our images to the gif container
 			$("#gifSection").prepend(gifDiv);
 		}
 	})
@@ -99,14 +125,26 @@ $(document.body).on("click", ".button", function() {
 
 
 
-
+//creating a function to switch between the static/animated state on generated images
 $(document.body).on("click", ".images", function() {
+
+	//creating if/else statement related to the data-state of the selected image
 	var state = $(this).attr("data-state")
+
+	//if the state is still run the following function
 	if (state === "still") {
+
+		//giving the source the animated source url
 		$(this).attr("src", $(this).attr("data-animate"));
+
+		//switching the data-state to animate
 		$(this).attr("data-state", "animate");
 	}	else {
+
+		//giving the source the still source url
 		$(this).attr("src", $(this).attr("data-still"));
+
+		//switching the data-state to still
 		$(this).attr("data-state", "still")
 	}
 })
