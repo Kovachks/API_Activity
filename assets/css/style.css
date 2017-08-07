@@ -1,18 +1,23 @@
+body {
+	background-color: #9ea0a3;
+}
+
 img {
 	width: 250px;
 	height: 200px;
 }
 #buttonDiv {
-	background-color: black;
+	background-color: grey;
 	padding: 5px;
 }
 .button {
 	margin: 2px;
-
+	border: solid black 2px;
+	background-color: 
 }
 
 #characterForm {
-	background-color: blue;
+	background-color: grey;
 	margin-top: 3px;
 }
 
@@ -21,4 +26,7 @@ img {
 	background-color: grey;
 	float: left;
 	margin: 3px;
+}
+.button:hover {
+	background-color: #5b5c5e;
 }
