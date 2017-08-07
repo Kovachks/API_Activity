@@ -1,2 +1,24 @@
-.gif {
+img {
+	width: 250px;
+	height: 200px;
+}
+#buttonDiv {
+	background-color: black;
+	padding: 5px;
+}
+.button {
+	margin: 2px;
+
+}
+
+#characterForm {
+	background-color: blue;
+	margin-top: 3px;
+}
+
+.gifDiv {
+	position: relative;
+	background-color: grey;
+	float: left;
+	margin: 3px;
 }

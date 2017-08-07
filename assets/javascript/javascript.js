@@ -101,6 +101,9 @@ $(document.body).on("click", ".button", function() {
 			//Creating a div variable which we will use for each specific gif
 			var gifDiv = $("<div>")
 
+			//giving class to above created div
+			gifDiv.addClass("gifDiv")
+
 			//Creating a paragraph element which will store our gif's rating
 			var p = $("<p>").text("Rating: " + results[i].rating);
 
@@ -160,6 +163,3 @@ $(document.body).on("click", ".images", function() {
 		$(this).attr("data-state", "still")
 	}
 })
-
-// $(document.body).on("click", ".images" function() {
-// 	alert("test")
