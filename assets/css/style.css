@@ -9,24 +9,41 @@ img {
 #buttonDiv {
 	background-color: grey;
 	padding: 5px;
+	width: 95%;
+	border: solid black 2px;
+	margin: 5px;	
 }
 .button {
 	margin: 2px;
 	border: solid black 2px;
-	background-color: 
+	background-color: #cecece;
 }
 
 #characterForm {
 	background-color: grey;
 	margin-top: 3px;
+	width: 300px;
+	margin: 5px;
+	border: solid black 2px;	
 }
-
 .gifDiv {
 	position: relative;
 	background-color: grey;
 	float: left;
 	margin: 3px;
+	border: solid black 2px;
 }
 .button:hover {
 	background-color: #5b5c5e;
+}
+#addChar:hover {
+	background-color: #5b5c5e;
+}
+#addChar {
+	background-color: #cecece;
+	margin: 5px;
+	border: solid black 2px;
+}
+#charValue {
+	margin: 5px;
 }
